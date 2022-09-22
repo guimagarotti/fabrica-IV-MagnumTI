@@ -12,7 +12,7 @@
 
 <br>
 <div align="center">
-  <img src="" width="900px" height="350px">
+  <img src="images/homepage.jpg" width="900px" height="350px">
 </div>
 
 ## Tecnologias / IDEs em Utilização 💻: 
