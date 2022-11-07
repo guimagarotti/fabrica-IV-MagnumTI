@@ -1,6 +1,44 @@
 package views;
 
+import conexoes.MySQL;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import models.LoginCliente;
+
 public class UIlogin extends javax.swing.JFrame {
+
+    MySQL conectar = new MySQL();
+    LoginCliente loginCliente = new LoginCliente();
+
+    public void logaCliente(LoginCliente loginCliente) {
+        this.conectar.conectaBanco();
+
+        String consultaEmail = this.txtemailLogin.getText();
+        String consultaSenha = String.valueOf(txtSenhaLogin.getPassword());
+
+        try {
+            this.conectar.executarSQL(
+                    "SELECT email, senha FROM tb_cadastro WHERE email = '" + consultaEmail + "' and senha = '" + consultaSenha + "';");
+            while (this.conectar.getResultSet().next()) {
+                loginCliente.setEmail(this.conectar.getResultSet().getString(1));
+                loginCliente.setSenha(this.conectar.getResultSet().getString(2));
+            }
+
+            if (loginCliente.getEmail() == null) {
+                JOptionPane.showMessageDialog(null, "[ERRO]: Cliente não localizado!");
+            }
+
+            if (loginCliente.getEmail() != null) {
+                System.out.println(txtemailLogin.getText());
+                JOptionPane.showMessageDialog(null, "[OK]: Cliente logado com sucesso!");
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao logar cliente!" + e.getMessage());
+        } finally {
+            this.conectar.fechaBanco();
+        }
+    }
 
     public UIlogin() {
         initComponents();
@@ -78,7 +116,7 @@ public class UIlogin extends javax.swing.JFrame {
                         .addGap(168, 168, 168)
                         .addComponent(jLabel7))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(92, 92, 92)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -208,7 +246,14 @@ public class UIlogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logaCliente(loginCliente);
+                txtemailLogin.setText("");
+                txtSenhaLogin.setText("");
+            }
+        });
     }//GEN-LAST:event_btnLoginActionPerformed
 
     public static void main(String args[]) {
