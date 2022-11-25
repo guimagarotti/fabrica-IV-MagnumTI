@@ -1,0 +1,361 @@
+package views;
+
+import conexoes.MySQL;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import models.AdicionaCarrinho;
+
+public class Carrinho extends javax.swing.JFrame {
+
+    MySQL conectar = new MySQL();
+    AdicionaCarrinho carrinho = new AdicionaCarrinho();
+
+    double total = 0;
+    int qtd_bola = 1;
+
+    public void cadastraBola(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtBola.getText());
+        carrinho.setPreco(Double.parseDouble(precoBola.getText()));
+
+        total += Double.parseDouble(precoBola.getText());
+        carrinho.setQuantidade(qtd_bola++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            valorTotal.setText(Double.toString(Math.round(total * 100.0) / 100.0));
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_osso = 1;
+
+    public void cadastraOsso(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtOsso.getText());
+        carrinho.setPreco(Double.parseDouble(precoOsso.getText()));
+
+        total += Double.parseDouble(precoOsso.getText());
+        carrinho.setQuantidade(qtd_osso++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            valorTotal.setText(Double.toString(Math.round(total * 100.0) / 100.0));
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_shampoo = 1;
+
+    public void cadastraShampoo(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtShampoo.getText());
+        carrinho.setPreco(Double.parseDouble(precoShampoo.getText()));
+
+        total += Double.parseDouble(precoShampoo.getText());
+        carrinho.setQuantidade(qtd_shampoo++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            valorTotal.setText(Double.toString(Math.round(total * 100.0) / 100.0));
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_arranhador = 1;
+
+    public void cadastraArranhador(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtArranhador.getText());
+        carrinho.setPreco(Double.parseDouble(precoArranhador.getText()));
+
+        total += Double.parseDouble(precoArranhador.getText());
+        carrinho.setQuantidade(qtd_arranhador++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            valorTotal.setText(Double.toString(Math.round(total * 100.0) / 100.0));
+            this.conectar.fechaBanco();
+        }
+    }
+
+    public Carrinho() {
+        initComponents();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        txtBola = new javax.swing.JLabel();
+        txtOsso = new javax.swing.JLabel();
+        txtShampoo = new javax.swing.JLabel();
+        txtArranhador = new javax.swing.JLabel();
+        precoBola = new javax.swing.JLabel();
+        precoOsso = new javax.swing.JLabel();
+        precoShampoo = new javax.swing.JLabel();
+        precoArranhador = new javax.swing.JLabel();
+        compraBola = new javax.swing.JButton();
+        compraOsso = new javax.swing.JButton();
+        compraShampoo = new javax.swing.JButton();
+        compraArranhador = new javax.swing.JButton();
+        valorTotal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtBola.setText("Bola");
+
+        txtOsso.setText("Osso");
+
+        txtShampoo.setText("Shampoo");
+
+        txtArranhador.setText("Arranhador");
+
+        precoBola.setText("29.90");
+
+        precoOsso.setText("9.90");
+
+        precoShampoo.setText("39.90");
+
+        precoArranhador.setText("19.90");
+
+        compraBola.setText("Comprar");
+        compraBola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compraBolaActionPerformed(evt);
+            }
+        });
+
+        compraOsso.setText("Comprar");
+        compraOsso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compraOssoActionPerformed(evt);
+            }
+        });
+
+        compraShampoo.setText("Comprar");
+        compraShampoo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compraShampooActionPerformed(evt);
+            }
+        });
+
+        compraArranhador.setText("Comprar");
+        compraArranhador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compraArranhadorActionPerformed(evt);
+            }
+        });
+
+        valorTotal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        valorTotal.setText("0");
+
+        jLabel1.setText("Gasto:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtBola)
+                        .addComponent(txtShampoo)
+                        .addComponent(precoShampoo)
+                        .addComponent(precoBola)
+                        .addComponent(compraBola)
+                        .addComponent(compraShampoo)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtOsso)
+                            .addComponent(txtArranhador)
+                            .addComponent(precoArranhador)
+                            .addComponent(precoOsso)
+                            .addComponent(compraOsso)
+                            .addComponent(compraArranhador))
+                        .addGap(77, 77, 77))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(valorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBola)
+                    .addComponent(txtOsso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(precoBola)
+                    .addComponent(precoOsso))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(compraBola)
+                    .addComponent(compraOsso))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtShampoo)
+                    .addComponent(txtArranhador))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(precoArranhador)
+                    .addComponent(precoShampoo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(compraShampoo)
+                    .addComponent(compraArranhador))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valorTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void compraOssoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraOssoActionPerformed
+        compraOsso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraOsso(carrinho);
+            }
+        });
+    }//GEN-LAST:event_compraOssoActionPerformed
+
+    private void compraBolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraBolaActionPerformed
+        compraBola.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraBola(carrinho);
+            }
+        });
+    }//GEN-LAST:event_compraBolaActionPerformed
+
+    private void compraShampooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraShampooActionPerformed
+        compraShampoo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraShampoo(carrinho);
+            }
+        });
+    }//GEN-LAST:event_compraShampooActionPerformed
+
+    private void compraArranhadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraArranhadorActionPerformed
+        compraArranhador.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraArranhador(carrinho);
+            }
+        });
+    }//GEN-LAST:event_compraArranhadorActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Carrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Carrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Carrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Carrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Carrinho().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton compraArranhador;
+    private javax.swing.JButton compraBola;
+    private javax.swing.JButton compraOsso;
+    private javax.swing.JButton compraShampoo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel precoArranhador;
+    private javax.swing.JLabel precoBola;
+    private javax.swing.JLabel precoOsso;
+    private javax.swing.JLabel precoShampoo;
+    private javax.swing.JLabel txtArranhador;
+    private javax.swing.JLabel txtBola;
+    private javax.swing.JLabel txtOsso;
+    private javax.swing.JLabel txtShampoo;
+    private javax.swing.JLabel valorTotal;
+    // End of variables declaration//GEN-END:variables
+}
