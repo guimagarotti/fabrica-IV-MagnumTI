@@ -5,16 +5,14 @@ public class AdicionaCarrinho {
     private String nome;
     private double preco;
     private int quantidade;
-    private int login;
     
     public AdicionaCarrinho() {}
     
-    public AdicionaCarrinho(int id, String nome, double preco, int quantidade, int login) {
+    public AdicionaCarrinho(int id, String nome, double preco, int quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.login = login;
     }
     
     public int getId() {
@@ -47,13 +45,5 @@ public class AdicionaCarrinho {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public int getLogin() {
-        return login;
-    }
-
-    public void setLogin(int login) {
-        this.login = login;
-    }    
+    } 
  }

@@ -29,7 +29,7 @@ public class UICadastro extends javax.swing.JFrame {
                     + "'" + novoCliente.getSenha() + "',"
                     + "'" + novoCliente.getPet() + "'"
                     + ");");
-            JOptionPane.showMessageDialog(null, "[OK]: Cliente cadastrado com sucesso!");
+            JOptionPane.showMessageDialog(null, "[OK]: Cliente logado com sucesso!");
         } catch (Exception e) {
             System.out.println("[ERRO]: Não foi possível cadastrar novo cliente! " + e.getMessage());
         } finally {
@@ -155,7 +155,7 @@ public class UICadastro extends javax.swing.JFrame {
                         .addGap(151, 151, 151)
                         .addComponent(jLabel7))
                     .addGroup(txtEmailCadastroLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addGap(55, 55, 55)
                         .addGroup(txtEmailCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8)
                             .addComponent(jLabel1)
@@ -170,7 +170,7 @@ public class UICadastro extends javax.swing.JFrame {
                     .addGroup(txtEmailCadastroLayout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addComponent(jLabel9)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         txtEmailCadastroLayout.setVerticalGroup(
             txtEmailCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +258,7 @@ public class UICadastro extends javax.swing.JFrame {
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 366, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(180, 180, 180))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()

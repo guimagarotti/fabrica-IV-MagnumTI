@@ -1,6 +1,119 @@
 package views;
 
+import conexoes.MySQL;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import models.AdicionaCarrinho;
+
 public class UICaes extends javax.swing.JFrame {
+
+    MySQL conectar = new MySQL();
+    AdicionaCarrinho carrinho = new AdicionaCarrinho();
+
+    int qtd_magnus = 1;
+
+    public void cadastraMagnus(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtProdCao1.getText());
+        carrinho.setPreco(Double.parseDouble(txtPrecoCao1.getText()));
+
+        carrinho.setQuantidade(qtd_magnus++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_coleira = 1;
+
+    public void cadastraColeira(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtProdCao2.getText());
+        carrinho.setPreco(Double.parseDouble(txtPrecoCao2.getText()));
+
+        carrinho.setQuantidade(qtd_coleira++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_mordedor = 1;
+
+    public void cadastraMordedor(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtProdCao3.getText());
+        carrinho.setPreco(Double.parseDouble(txtPrecoCao3.getText()));
+
+        carrinho.setQuantidade(qtd_mordedor++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            this.conectar.fechaBanco();
+        }
+    }
+
+    int qtd_petisco = 1;
+
+    public void cadastraPetisco(AdicionaCarrinho carrinho) {
+        this.conectar.conectaBanco();
+
+        carrinho.setNome(txtProdCao4.getText());
+        carrinho.setPreco(Double.parseDouble(txtPrecoCao4.getText()));
+
+        carrinho.setQuantidade(qtd_petisco++);
+
+        try {
+            this.conectar.insertSQL(
+                    "INSERT INTO carrinho VALUES ("
+                    + "'" + carrinho.getId() + "',"
+                    + "'" + carrinho.getNome() + "',"
+                    + "'" + carrinho.getPreco() + "',"
+                    + "'" + carrinho.getQuantidade() + "'"
+                    + ");");
+            JOptionPane.showMessageDialog(null, "[OK]: Item adicionado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("[ERRO]: Não foi possível adicionar o item ao carrinho! " + e.getMessage());
+        } finally {
+            this.conectar.fechaBanco();
+        }
+    }
 
     public UICaes() {
         initComponents();
@@ -22,16 +135,32 @@ public class UICaes extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        btnCarrinhoCao4 = new com.k33ptoo.components.KButton();
+        btnCarrinhoCao1 = new com.k33ptoo.components.KButton();
+        btnCarrinhoCao2 = new com.k33ptoo.components.KButton();
+        btnCarrinhoCao3 = new com.k33ptoo.components.KButton();
+        txtProdCao1 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        cifrao1 = new javax.swing.JLabel();
+        txtProdCao2 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        cifrao2 = new javax.swing.JLabel();
+        txtProdCao3 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        cifrao3 = new javax.swing.JLabel();
+        txtProdCao4 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        cifrao4 = new javax.swing.JLabel();
+        txtPrecoCao1 = new javax.swing.JLabel();
+        txtPrecoCao2 = new javax.swing.JLabel();
+        txtPrecoCao3 = new javax.swing.JLabel();
+        txtPrecoCao4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnCadastrar = new com.k33ptoo.components.KButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnLogin = new com.k33ptoo.components.KButton();
         btnfechar = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -59,58 +188,280 @@ public class UICaes extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/caes2.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/prod_cao_2.png"))); // NOI18N
         jLabel6.setText("jLabel6");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/brinquedo1.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/prod_cao_1.png"))); // NOI18N
         jLabel8.setText("jLabel6");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/caes4.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/prod_cao_4.png"))); // NOI18N
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/caes5.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/prod_cao_3.png"))); // NOI18N
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/caes1.png"))); // NOI18N
+        btnCarrinhoCao4.setBorder(null);
+        btnCarrinhoCao4.setForeground(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao4.setText("+ Carrinho");
+        btnCarrinhoCao4.setToolTipText("");
+        btnCarrinhoCao4.setBorderPainted(false);
+        btnCarrinhoCao4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCarrinhoCao4.setkBackGroundColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao4.setkBorderRadius(30);
+        btnCarrinhoCao4.setkEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao4.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao4.setkHoverEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao4.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao4.setkHoverStartColor(new java.awt.Color(242, 104, 53));
+        btnCarrinhoCao4.setkPressedColor(new java.awt.Color(255, 153, 0));
+        btnCarrinhoCao4.setkSelectedColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao4.setkStartColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhoCao4ActionPerformed(evt);
+            }
+        });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/caes3.png"))); // NOI18N
+        btnCarrinhoCao1.setBorder(null);
+        btnCarrinhoCao1.setForeground(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao1.setText("+ Carrinho");
+        btnCarrinhoCao1.setToolTipText("");
+        btnCarrinhoCao1.setBorderPainted(false);
+        btnCarrinhoCao1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCarrinhoCao1.setkBackGroundColor(new java.awt.Color(242, 104, 53));
+        btnCarrinhoCao1.setkBorderRadius(30);
+        btnCarrinhoCao1.setkEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao1.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao1.setkHoverEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao1.setkHoverStartColor(new java.awt.Color(242, 104, 53));
+        btnCarrinhoCao1.setkPressedColor(new java.awt.Color(255, 153, 0));
+        btnCarrinhoCao1.setkSelectedColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao1.setkStartColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhoCao1ActionPerformed(evt);
+            }
+        });
+
+        btnCarrinhoCao2.setBorder(null);
+        btnCarrinhoCao2.setForeground(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao2.setText("+ Carrinho");
+        btnCarrinhoCao2.setToolTipText("");
+        btnCarrinhoCao2.setBorderPainted(false);
+        btnCarrinhoCao2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCarrinhoCao2.setkBackGroundColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao2.setkBorderRadius(30);
+        btnCarrinhoCao2.setkEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao2.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao2.setkHoverEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao2.setkHoverStartColor(new java.awt.Color(242, 104, 53));
+        btnCarrinhoCao2.setkPressedColor(new java.awt.Color(255, 153, 0));
+        btnCarrinhoCao2.setkSelectedColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao2.setkStartColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhoCao2ActionPerformed(evt);
+            }
+        });
+
+        btnCarrinhoCao3.setBorder(null);
+        btnCarrinhoCao3.setForeground(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao3.setText("+ Carrinho");
+        btnCarrinhoCao3.setToolTipText("");
+        btnCarrinhoCao3.setBorderPainted(false);
+        btnCarrinhoCao3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCarrinhoCao3.setkBackGroundColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao3.setkBorderRadius(30);
+        btnCarrinhoCao3.setkEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao3.setkForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao3.setkHoverEndColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao3.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        btnCarrinhoCao3.setkHoverStartColor(new java.awt.Color(242, 104, 53));
+        btnCarrinhoCao3.setkPressedColor(new java.awt.Color(255, 153, 0));
+        btnCarrinhoCao3.setkSelectedColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao3.setkStartColor(new java.awt.Color(250, 150, 0));
+        btnCarrinhoCao3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarrinhoCao3ActionPerformed(evt);
+            }
+        });
+
+        txtProdCao1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        txtProdCao1.setText("<html>\nRação Magnus Original Premium - Cães <br> Filhotes 10kg");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(166, 166, 166));
+        jLabel16.setText("Cachorros");
+
+        cifrao1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        cifrao1.setForeground(new java.awt.Color(68, 78, 67));
+        cifrao1.setText("R$ ");
+
+        txtProdCao2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        txtProdCao2.setText("<html> Coleira de Cachorro com Identificação em <br> Papel - Tecido Macio Vermelho Liso");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(166, 166, 166));
+        jLabel17.setText("Cachorros");
+
+        cifrao2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        cifrao2.setForeground(new java.awt.Color(68, 78, 67));
+        cifrao2.setText("R$ ");
+
+        txtProdCao3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        txtProdCao3.setText("<html> Mordedor Halteres com espinhos de <br> plástico");
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(166, 166, 166));
+        jLabel26.setText("Cachorros");
+
+        cifrao3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        cifrao3.setForeground(new java.awt.Color(68, 78, 67));
+        cifrao3.setText("R$");
+
+        txtProdCao4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        txtProdCao4.setText("<html> Petisco Biscrok Pedigree adulto raças <br> pequenas - 500g");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(166, 166, 166));
+        jLabel29.setText("Cachorros");
+
+        cifrao4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        cifrao4.setForeground(new java.awt.Color(68, 78, 67));
+        cifrao4.setText("R$");
+
+        txtPrecoCao1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        txtPrecoCao1.setForeground(new java.awt.Color(68, 78, 67));
+        txtPrecoCao1.setText("89.90");
+
+        txtPrecoCao2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        txtPrecoCao2.setForeground(new java.awt.Color(68, 78, 67));
+        txtPrecoCao2.setText("54.10");
+
+        txtPrecoCao3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        txtPrecoCao3.setForeground(new java.awt.Color(68, 78, 67));
+        txtPrecoCao3.setText("24.90");
+
+        txtPrecoCao4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        txtPrecoCao4.setForeground(new java.awt.Color(68, 78, 67));
+        txtPrecoCao4.setText("17.60");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel11)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProdCao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(cifrao1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPrecoCao1))))
+                            .addComponent(txtProdCao4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cifrao4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPrecoCao4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(84, 84, 84)
+                                .addComponent(btnCarrinhoCao1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel15))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addComponent(btnCarrinhoCao2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtProdCao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cifrao2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPrecoCao2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(txtProdCao3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(cifrao3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPrecoCao3))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(99, 99, 99)
+                                .addComponent(btnCarrinhoCao3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel14)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addGap(84, 84, 84)
+                        .addComponent(btnCarrinhoCao4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtProdCao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6))
-                        .addGap(0, 0, 0)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel11)))
+                            .addComponent(cifrao1)
+                            .addComponent(txtPrecoCao1)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtProdCao3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cifrao3)
+                                    .addComponent(txtPrecoCao3)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtProdCao2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cifrao2)
+                                    .addComponent(txtPrecoCao2))))
+                        .addGap(2, 2, 2)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel14)))
-                .addGap(0, 122, Short.MAX_VALUE))
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCarrinhoCao1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCarrinhoCao2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnCarrinhoCao3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtProdCao4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel29)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cifrao4)
+                    .addComponent(txtPrecoCao4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCarrinhoCao4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
@@ -131,8 +482,10 @@ public class UICaes extends javax.swing.JFrame {
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jLabel7))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
@@ -144,9 +497,9 @@ public class UICaes extends javax.swing.JFrame {
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel7)
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -156,55 +509,7 @@ public class UICaes extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnCadastrar.setBorder(null);
-        btnCadastrar.setForeground(new java.awt.Color(0, 0, 0));
-        btnCadastrar.setText("Inscrever-se");
-        btnCadastrar.setToolTipText("");
-        btnCadastrar.setBorderPainted(false);
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCadastrar.setkBackGroundColor(new java.awt.Color(250, 150, 0));
-        btnCadastrar.setkBorderRadius(50);
-        btnCadastrar.setkEndColor(new java.awt.Color(250, 150, 0));
-        btnCadastrar.setkForeGround(new java.awt.Color(0, 0, 0));
-        btnCadastrar.setkHoverEndColor(new java.awt.Color(250, 150, 0));
-        btnCadastrar.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        btnCadastrar.setkHoverStartColor(new java.awt.Color(242, 104, 53));
-        btnCadastrar.setkPressedColor(new java.awt.Color(255, 153, 0));
-        btnCadastrar.setkSelectedColor(new java.awt.Color(250, 150, 0));
-        btnCadastrar.setkStartColor(new java.awt.Color(250, 150, 0));
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("ou");
-
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sublogo_-_petshop__2___1_-removebg-preview.png"))); // NOI18N
-
-        btnLogin.setBorder(null);
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
-        btnLogin.setText("Login");
-        btnLogin.setToolTipText("");
-        btnLogin.setBorderPainted(false);
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnLogin.setkBackGroundColor(new java.awt.Color(250, 150, 0));
-        btnLogin.setkBorderRadius(50);
-        btnLogin.setkEndColor(new java.awt.Color(250, 150, 0));
-        btnLogin.setkForeGround(new java.awt.Color(0, 0, 0));
-        btnLogin.setkHoverEndColor(new java.awt.Color(250, 150, 0));
-        btnLogin.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        btnLogin.setkHoverStartColor(new java.awt.Color(242, 104, 53));
-        btnLogin.setkPressedColor(new java.awt.Color(255, 153, 0));
-        btnLogin.setkSelectedColor(new java.awt.Color(250, 150, 0));
-        btnLogin.setkStartColor(new java.awt.Color(250, 150, 0));
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
 
         btnfechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/red-x-icon (1).png"))); // NOI18N
         btnfechar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,6 +522,13 @@ public class UICaes extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(250, 150, 0));
         jLabel12.setText("CÃES");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/carrinho-icon (1).png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -228,30 +540,25 @@ public class UICaes extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addGap(252, 252, 252)
-                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(579, 579, 579)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
+                        .addContainerGap()
+                        .addComponent(jLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnfechar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnfechar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel12)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -271,21 +578,56 @@ public class UICaes extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        UICadastro telaCadastro = new UICadastro();
-        telaCadastro.setVisible(true);
-    }//GEN-LAST:event_btnCadastrarActionPerformed
-
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        UIlogin telaLogin = new UIlogin();
-        telaLogin.setVisible(true);
-    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnfecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnfecharMouseClicked
         this.dispose();
+
+        UIHomepage telaHome = new UIHomepage();
+        telaHome.setVisible(true);
     }//GEN-LAST:event_btnfecharMouseClicked
+
+    private void btnCarrinhoCao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoCao4ActionPerformed
+        btnCarrinhoCao4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraPetisco(carrinho);
+            }
+        });
+    }//GEN-LAST:event_btnCarrinhoCao4ActionPerformed
+
+    private void btnCarrinhoCao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoCao1ActionPerformed
+        btnCarrinhoCao1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraMagnus(carrinho);
+            }
+        });
+    }//GEN-LAST:event_btnCarrinhoCao1ActionPerformed
+
+    private void btnCarrinhoCao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoCao2ActionPerformed
+        btnCarrinhoCao2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraColeira(carrinho);
+            }
+        });
+    }//GEN-LAST:event_btnCarrinhoCao2ActionPerformed
+
+    private void btnCarrinhoCao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoCao3ActionPerformed
+        btnCarrinhoCao3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastraMordedor(carrinho);
+            }
+        });
+    }//GEN-LAST:event_btnCarrinhoCao3ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        UICarrinho telaCarrinho = new UICarrinho();
+        telaCarrinho.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -328,6 +670,22 @@ public class UICaes extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -338,16 +696,24 @@ public class UICaes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.k33ptoo.components.KButton btnCadastrar;
-    private com.k33ptoo.components.KButton btnLogin;
+    private com.k33ptoo.components.KButton btnCarrinhoCao1;
+    private com.k33ptoo.components.KButton btnCarrinhoCao2;
+    private com.k33ptoo.components.KButton btnCarrinhoCao3;
+    private com.k33ptoo.components.KButton btnCarrinhoCao4;
     private javax.swing.JLabel btnfechar;
+    private javax.swing.JLabel cifrao1;
+    private javax.swing.JLabel cifrao2;
+    private javax.swing.JLabel cifrao3;
+    private javax.swing.JLabel cifrao4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -360,5 +726,13 @@ public class UICaes extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel txtPrecoCao1;
+    private javax.swing.JLabel txtPrecoCao2;
+    private javax.swing.JLabel txtPrecoCao3;
+    private javax.swing.JLabel txtPrecoCao4;
+    private javax.swing.JLabel txtProdCao1;
+    private javax.swing.JLabel txtProdCao2;
+    private javax.swing.JLabel txtProdCao3;
+    private javax.swing.JLabel txtProdCao4;
     // End of variables declaration//GEN-END:variables
 }

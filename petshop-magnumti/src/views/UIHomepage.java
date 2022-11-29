@@ -30,7 +30,6 @@ public class UIHomepage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnLogin = new com.k33ptoo.components.KButton();
         btnCarrinho = new javax.swing.JLabel();
-        btnBrinquedos = new com.k33ptoo.components.KButton();
         btnfechar = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -109,9 +108,9 @@ public class UIHomepage extends javax.swing.JFrame {
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel8)
-                .addGap(448, 448, 448))
+                .addGap(451, 451, 451))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,6 +169,11 @@ public class UIHomepage extends javax.swing.JFrame {
         btnsobrenos.setkHoverForeGround(new java.awt.Color(250, 150, 0));
         btnsobrenos.setkHoverStartColor(new java.awt.Color(204, 204, 204));
         btnsobrenos.setkStartColor(new java.awt.Color(255, 255, 255));
+        btnsobrenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsobrenosActionPerformed(evt);
+            }
+        });
 
         btnHome.setBorder(null);
         btnHome.setText("HOME");
@@ -240,20 +244,9 @@ public class UIHomepage extends javax.swing.JFrame {
         });
 
         btnCarrinho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/carrinho-icon (1).png"))); // NOI18N
-
-        btnBrinquedos.setBorder(null);
-        btnBrinquedos.setText("BRINQUEDOS");
-        btnBrinquedos.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
-        btnBrinquedos.setkBackGroundColor(new java.awt.Color(255, 255, 255));
-        btnBrinquedos.setkEndColor(new java.awt.Color(255, 255, 255));
-        btnBrinquedos.setkForeGround(new java.awt.Color(0, 0, 0));
-        btnBrinquedos.setkHoverEndColor(new java.awt.Color(204, 204, 204));
-        btnBrinquedos.setkHoverForeGround(new java.awt.Color(250, 150, 0));
-        btnBrinquedos.setkHoverStartColor(new java.awt.Color(204, 204, 204));
-        btnBrinquedos.setkStartColor(new java.awt.Color(255, 255, 255));
-        btnBrinquedos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBrinquedosActionPerformed(evt);
+        btnCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCarrinhoMouseClicked(evt);
             }
         });
 
@@ -272,9 +265,7 @@ public class UIHomepage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(442, 442, 442)
-                        .addComponent(btnBrinquedos, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(500, 500, 500)
                         .addComponent(btnsobrenos, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,7 +273,7 @@ public class UIHomepage extends javax.swing.JFrame {
                         .addComponent(btncaes, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btngatos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(526, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnfechar)
                         .addGap(18, 18, 18)
@@ -314,8 +305,7 @@ public class UIHomepage extends javax.swing.JFrame {
                             .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btncaes, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btngatos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnsobrenos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBrinquedos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnsobrenos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnfechar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -338,6 +328,7 @@ public class UIHomepage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
@@ -359,18 +350,16 @@ public class UIHomepage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnfecharMouseClicked
 
-    private void btnBrinquedosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrinquedosActionPerformed
-        UIBrinquedos telaBrinquedos = new UIBrinquedos();
-        telaBrinquedos.setVisible(true);
-    }//GEN-LAST:event_btnBrinquedosActionPerformed
-
     private void btncaesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncaesActionPerformed
         UICaes telaProdCaes = new UICaes();
+        this.dispose();
         telaProdCaes.setVisible(true);
     }//GEN-LAST:event_btncaesActionPerformed
 
     private void btngatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngatosActionPerformed
         UIGatos telaProdGatos = new UIGatos();
+        this.dispose();
+
         telaProdGatos.setVisible(true);
     }//GEN-LAST:event_btngatosActionPerformed
 
@@ -378,6 +367,16 @@ public class UIHomepage extends javax.swing.JFrame {
         UICaes telaCaes2 = new UICaes();
         telaCaes2.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void btnCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrinhoMouseClicked
+        UICarrinho telacarrinho = new UICarrinho();
+        telacarrinho.setVisible(true);
+    }//GEN-LAST:event_btnCarrinhoMouseClicked
+
+    private void btnsobrenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsobrenosActionPerformed
+        UIAboutUs sobrenos = new UIAboutUs();
+        sobrenos.setVisible(true);
+    }//GEN-LAST:event_btnsobrenosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,7 +421,6 @@ public class UIHomepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.k33ptoo.components.KButton btnBrinquedos;
     private com.k33ptoo.components.KButton btnCadastrar;
     private javax.swing.JLabel btnCarrinho;
     private com.k33ptoo.components.KButton btnComprar;
