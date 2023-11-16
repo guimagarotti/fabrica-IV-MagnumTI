@@ -1,4 +1,4 @@
-# Fábrica de Projetos II - Magnum TI
+# Fábrica de Projetos IV - Magnum TI
 
 ## Informações da Equipe 🏆: 
 <div align="justify">
@@ -7,7 +7,7 @@
 
 ## Projeto 🛍️:
 <div align="justify">
- Esse projeto teve como inspiração um E-Commerce, ou seja, um comércio eletrónico que exerce suas funcionalidades integralmente via meio digital. Com base nisso, utilizariamos essa interface, totalmente estilizada por nós, para divulgar nossos produtos e ganhar fama na área dos pets. A conclusão desse projeto está ligada à um dos requisitos para a conclusão do curso de Análise e Desenvolvimento de Sistemas, na Facens, destacando aqui nosso orientador para elaboração do projeto, Robson Martins. 
+ Esse projeto consiste no desenvolvimento de um sistema de gerenciamento de estoque, que possibilitará à loja controlar de forma eficiente o fluxo de entrada e saída de produtos, monitorar o nível de estoque de produtos específicos, realizar reabastecimentos e gerar relatórios analíticos. Para atingir essa proposta,  o sistema deve armazenar as informações de cada produto (nome, fabricante, data de validade, funcionalidade, quantidade, lote). Sendo esperado também, que o sistema apresente notificações visuais, para quando um produto estiver em falta ou com baixa quantidade, além de alertas para a data de validade, gerando assim um sistema que prevê possíveis carências de produtos e evite situações de complicação. 
 </div>
 
 <br>
@@ -17,15 +17,20 @@
 
 ## Tecnologias / IDEs em Utilização 💻: 
 <ul>
-  <li>Java;</li>
-  <li>Java Swing;</li>
-  <li>Banco de Dados Relacional: MySQL;</li>
-  <li>NetBeans.</li>
+ <li>HTML;</li>
+ <li>CSS;</li>
+ <li>Bootstrap;</li>
+ <li>JavaScript;</li>
+ <li>TypeScript;</li>
+ <li>Angular;</li>
+ <li>Java;</li>
+ <li>MySQL;</li>
+ <li>Visual Studio Code.</li>
 </ul>
 
 ## Instalação 🔌:
 Clone esse projeto com o Git Bash, utilizando o comando abaixo:
         
-       git clone https://github.com/guimagarotti/fabrica-II-magnumTI.git
+       git clone https://github.com/guimagarotti/fabrica-IV-MagnumTI.git
 
 ## 🚀 Bora codar! 🚀
