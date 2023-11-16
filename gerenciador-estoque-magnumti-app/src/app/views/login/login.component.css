@@ -1,0 +1,13 @@
+.iconVisualizarSenha{
+    position: absolute;
+    right: 0;
+    padding: .45rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background: #35aad4;
+    border-radius: 0 .2rem .2rem 0;
+}
+
+.caps {
+    font-weight: bolder;
+}

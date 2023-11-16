@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            background-color: #4a525a;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #FFF;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #4a525a;
+            background-color: #FFF;
+        }
+
+        .content {
+            margin-left: 250px;
+            /* Largura da barra lateral */
+            padding: 16px;
+        }
+    </style>
+    <title>Barra de Navegação Lateral</title>
+</head>
+
+<body>
+
+    <!-- Barra de Navegação Lateral -->
+    <div class="sidebar">
+        <img src="../../../assets/images/logo-magnum-ti (1).png" width="250" height="230" alt="Logo MagnumTI" srcset="">
+
+        <p style="padding: 10px; color: #FFF; font-weight: bold;">Menus</p>
+        <hr style="color: #FFF !important; margin-top: -20px;">
+        <a href="#">Home</a>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Cadastrar Produto</a>
+        <a href="#">Visualizar Estoque</a>
+    </div>
+
+    <!-- Conteúdo da Página -->
+    <div class="content">
+        <h2>Conteúdo da Página</h2>
+        <p>Seu conteúdo aqui...</p>
+    </div>
+
+    <!-- Scripts do Bootstrap (JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
