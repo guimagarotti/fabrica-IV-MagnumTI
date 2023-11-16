@@ -12,7 +12,7 @@
 
 <br>
 <div align="center">
-  <img src="homepage.jpg" width="800px" height="400px">
+  <img src="logo-magnumti.png" width="550px" height="350px">
 </div>
 
 ## Tecnologias / IDEs em Utilização 💻: 
